@@ -272,6 +272,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7474824470318735757, guid: 71d5933ed7716244b901d5e31f047fb4, type: 3}
   m_PrefabInstance: {fileID: 214878029}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &242221945
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242221947}
+  - component: {fileID: 242221946}
+  m_Layer: 0
+  m_Name: Music Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &242221946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242221945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c23a835bb3b40519ee8dcbcf14dac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  songs:
+  - {fileID: 8300000, guid: 8c886ed2bf0974e9c8ea7f031741b7a1, type: 3}
+  - {fileID: 8300000, guid: 6592eca990046445dbb317492af13bbf, type: 3}
+  - {fileID: 8300000, guid: fd4dc0435111742c197466c8a3339687, type: 3}
+  - {fileID: 8300000, guid: 30fb2cadf9279422ebd194ee01fd1dcc, type: 3}
+  - {fileID: 8300000, guid: f1b68b8b71bc94ed9a961046706c9278, type: 3}
+  defaultVolume: 1
+  playOnStart: 1
+  shuffle: 1
+--- !u!4 &242221947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242221945}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.31627, y: 9.25169, z: -49.37023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &329164704
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +388,8 @@ MonoBehaviour:
     level\n            - The further you go up the tighter the secuity will be\n-
     You need to collect key cards on each floor to access the elevators for the upper\nfloors\n           
     - You will also require more keycards as you ascend\n- If caught you will restart
-    operation from most recent floor you have reached"
+    operation from most recent floor you have reached\n- Press \"R\" to activate
+    smoke bomb to disapear for 5 seconds \x03R sserP-"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1343,6 +1397,15 @@ MonoBehaviour:
   playerCamera: {fileID: 2064088842}
   mouseSensitivity: 2
   lookLimit: 80
+  smokeKey: 114
+  smokeDuration: 5
+  smokeEffect: {fileID: 0}
+  runSound: {fileID: 8300000, guid: 0d5793caa291249e0b0a6a2642fad7ba, type: 3}
+  jumpSound: {fileID: 8300000, guid: 92a3b06937ab84d5fb4caed5621ce5a3, type: 3}
+  landSound: {fileID: 8300000, guid: 17ab761b1dba8473f811b0d1df3ecba4, type: 3}
+  smokeBombSound: {fileID: 8300000, guid: 023195e70643c41ce841bd0dfc24b4f2, type: 3}
+  runSoundInterval: 0.4
+  audioVolume: 1
 --- !u!136 &1139881653
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1726,7 +1789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6296ffcaab3448942b6429c0718cdb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTrigger
-  nextSceneName: 
+  nextSceneName: MainScene
   playerTag: Player
 --- !u!65 &1307300267
 BoxCollider:
@@ -2750,3 +2813,4 @@ SceneRoots:
   - {fileID: 845858984}
   - {fileID: 1386459401}
   - {fileID: 1791954658}
+  - {fileID: 242221947}
